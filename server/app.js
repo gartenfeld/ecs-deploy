@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 
 app.get('/api/:position', api);
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var server_port = 8081;
+var server_ip_address = '127.0.0.1';
  
 app.listen(server_port, server_ip_address);
