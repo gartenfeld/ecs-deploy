@@ -1,9 +1,11 @@
+// var HOST = '123.57.51.204';
+var AUDIO_HOST = 'localhost:8081';
+
 var Word = Backbone.Model.extend({
 
   defaults: {
-    a:  '',
-    de: '',
     en: '',
+    cn: '',
     f:  '',
     count: 0
   },
@@ -11,7 +13,7 @@ var Word = Backbone.Model.extend({
   initialize: function () {
     soundManager.createSound({
       id: this.get('f'),
-      url: 'http://123.57.51.204/lextra/' + this.get('f') + ".mp3"
+      url: 'http://' + AUDIO_HOST + '/audio/EN2K/' + this.get('f') + ".mp3"
     }).load();
   },
 
@@ -29,6 +31,3 @@ var Word = Backbone.Model.extend({
   }
 
 });
-
-// url: 'http://lxtr.herokuapp.com/lextra/' + this.get('f') + ".mp3"
-
